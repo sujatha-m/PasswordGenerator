@@ -13,12 +13,19 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);*/
-let upperCase = prompt ("Include uppercase letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)?");
-let lowerCase = prompt ("Include lowercase letters (abcdefghijklmnopqrstuvwxyz)?");
-let numbers = prompt ("Include numbers (0123456789)?");
-let specialCharacters = prompt ("Include special characters (!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)?");
+let generateBtn = document.querySelector("#generate");
 
+generateBtn.addEventListener("click", writePassword);
 
+function generatePassword(length,charType) {
+  let returnVal = "";
+  for (let i = 0, n = charType.length; i < length; ++i) {
+      returnVal += charType.charAt(Math.floor(Math.random() * n));
+  }
+  return returnVal;
+}
+
+function writePassword(){
 
 let text = "";
 let charNum = 0;
@@ -33,6 +40,8 @@ if(passwordLength === null || passwordLength === ""){
   if((Number(passwordLength) >= 8) && (Number(passwordLength) <= 128)){
     text = "Password of length " + passwordLength + " would be generated";
 
+    let lowerCase = prompt ("Include lowercase letters (abcdefghijklmnopqrstuvwxyz)?");
+
     if(lowerCase === null) {
       text = text + "Lowercase letter not included";
     } else {
@@ -40,6 +49,8 @@ if(passwordLength === null || passwordLength === ""){
       charType = charType + "abcdefghijklmnopqrstuvwxyz";
       text = text + "Lowercase letters included";
     }
+
+    let upperCase = prompt ("Include uppercase letters (ABCDEFGHIJKLMNOPQRSTUVWXYZ)?");
 
     if(upperCase === null) {
       text = text + "Uppercase letter not included";
@@ -49,6 +60,8 @@ if(passwordLength === null || passwordLength === ""){
       text = text + "Uppercase letters included";
     }
 
+    let numbers = prompt ("Include numbers (0123456789)?");
+
     if(numbers === null) {
       text = text + "Numbers not included";
     } else {
@@ -57,6 +70,8 @@ if(passwordLength === null || passwordLength === ""){
       text = text + "Numbers included";
     }
 
+    let specialCharacters = prompt ("Include special characters (!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)?");
+
     if (specialCharacters === null) {
       text = text + "Special Characters not included"
     } else {
@@ -64,7 +79,12 @@ if(passwordLength === null || passwordLength === ""){
       charType = charType + "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
       text = text + "Special Characters included";
     }
+    if (charNum === 0){
+      alert ("No characters selected! Atleast one is required for password generation");
+    }
       
   } 
+  let passwordText = document.querySelector("#password");
+  passwordText.value = password;
 }
-
+}
