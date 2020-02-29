@@ -19,12 +19,12 @@ If any of the password generation criteria fails, an alert is displayed to the u
 
 The following images demonstrate the application functionality:
 
-![password generator demo](./Assets\1.PasswordLengthPrompt.png)
-![password generator demo](./Assets\2.lowercaseconfirmation.png)
-![password generator demo](./Assets\3.uppercaseconfirmation.png)
-![password generator demo](./Assets\4.Numeralsconfirmation.png)
-![password generator demo](./Assets\5.Specialcharactersconfirmation.png)
-![password generator demo](./Assets\6.Alloptionsconfirmation.png)
-![password generator demo](./Assets\7.PasswordGenerated.png)
-![password generator demo](./Assets\8.InvalidPasswordLengthAlert.png)
-![password generator demo](./Assets\9.NocharactertypesAlert.png)
+![password length prompt](./Assets\1.PasswordLengthPrompt.png)
+![lowercase confirm](./Assets\2.lowercaseconfirmation.png)
+![uppercase confirm](./Assets\3.uppercaseconfirmation.png)
+![numerals confirm](./Assets\4.Numeralsconfirmation.png)
+![special characters confirm](./Assets\5.Specialcharactersconfirmation.png)
+![all options confirm](./Assets\6.Alloptionsconfirmation.png)
+![password genenerated](./Assets\7.PasswordGenerated.png)
+![invalid password length alert](./Assets\8.InvalidPasswordLengthAlert.png)
+![no character type alert](./Assets\9.NocharactertypesAlert.png)
